@@ -1,0 +1,56 @@
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/welcome"><h2>GetTheLook!</h2></a>
+    <div class="collapse navbar-collapse d-flex gap-2 d-md-flex justify-content-md-end" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <% if(userLog.admin) { %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Panel del administrador
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="/formAddProduct">Agregar producto</a></li>
+              <li><a class="dropdown-item" href="/api/ordenes">Ver ordenes</a></li>
+              <li><a class="dropdown-item" href="/serverInfo">Datos del servidor</a></li>
+            </ul>
+          </li>
+          <% } %>
+          <li class="nav-item  %> ">
+            <a class="nav-link" href="/api/productos"><h5>Productos</h5></a>
+          </li>
+          
+
+           <li class="nav-item  %> ">
+            <a class="nav-link mx-4" href="/api/carrito"><img src="https://cdn-icons-png.flaticon.com/512/4903/4903482.png"  height="30" width="30"  /></a>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://cdn-icons-png.flaticon.com/512/4701/4701477.png" height="26" width="26" />
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="/chat/grupal"><img src="https://cdn-icons-png.flaticon.com/512/4723/4723570.png" height="22" width="22" />&NonBreakingSpace;Chat</a></li>
+              <li><a class="dropdown-item" href="/chat/individual">Mensajes enviados</a></li>
+            </ul>
+          </li>
+
+          <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= userLog.username %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="/profile"><img src="https://cdn-icons-png.flaticon.com/512/64/64572.png"  height="24" width="24"/>&NonBreakingSpace; Mi perfil</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link" href="/logout"><img src="https://cdn-icons-png.flaticon.com/512/4034/4034210.png"  height="28" width="28"  /></a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>

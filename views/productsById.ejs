@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <%- include(`./partials/head`) %>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+                integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    </head>
+
+<body>
+    <header>
+        <%- include('./partials/navbar', {current: `formProductos`}) %>
+    </header>
+
+    <section class="attention">
+        <div class="board">
+                        <div class="card-body p-5">
+                            <h3 class="fw-bold mb-2 text-uppercase">Detalle</h3>
+                            <br>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <% if(userLog.admin) { %>
+                                            <th scope="col">ID</th>                                                    
+                                        <% } %>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Descripción del producto</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Categoría</th>
+                                        <th scope="col" class="text-center">Imagen</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        
+                                        <% if(userLog.admin) { %>
+                                            <td>
+                                                <%= productbyIdDTO.id %>
+                                            </td>                                                    
+                                        <% } %>
+
+                                        <td>
+                                            <%= productbyIdDTO.nombre %>
+                                        </td>
+                                        <td>
+                                            <%= productbyIdDTO.descripcion %>
+                                        </td>
+                                        <td>
+                                            $<%= productbyIdDTO.precio %>
+                                        </td>
+                                        <td>
+                                            <%= productbyIdDTO.categoria %>
+                                        </td>
+                                        <td>
+                                            <img src="<%= productbyIdDTO.thumbnail %>" width="200" height="200">
+                                        </td>
+                                        <td>
+                                            <form action="/api/carrito/addProduct" method="POST">
+                                                <input type="hidden" name="idUser" value=<%=userLog._id %> />
+                                                <input type="hidden" name="idProduct" value=<%=productbyIdDTO.id %> />
+                                                <button class="btn btn-dark" type="submit">
+                                                    🤎 Agregar alcarrito
+                                                </button>
+                                            </form>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
