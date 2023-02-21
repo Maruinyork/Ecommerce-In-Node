@@ -87,6 +87,6 @@ La duración de las sesiones es limitada y con expiración
 ### Producto modificado
 ![Image text](https://github.com/Maruinyork/Ecommerce-In-Node/blob/main/public/img/screenshots/modificado.png)
 
-Autora: Maruinyork: Maria Jaureguiber
-Base de datos: Mongo, usuario: Maruinyork 
-                    Nombre DB: backend
+- Autora: Maruinyork: Maria Jaureguiber
+- Base de datos: Mongo, usuario: Maruinyork 
+                      Nombre DB: backend
